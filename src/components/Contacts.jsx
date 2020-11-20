@@ -1,14 +1,14 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import User from './User';
+import Contact from './Contact';
 
-const Users = (props) => {
+const Contacts = (props) => {
     return (
         <Container>
             <Row>
                 {
                     props.usersData.map((user)=>{
-                        return <User userInfo={user} 
+                        return <Contact userInfo={user} 
                         key={user.id} 
                         deleteUser={props.deleteUser}
                         editUser={props.editUser}/> 
@@ -20,4 +20,4 @@ const Users = (props) => {
     );
 }
 
-export default Users;
+export default Contacts;

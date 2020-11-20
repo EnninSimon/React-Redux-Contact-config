@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Col, Button, Modal } from 'react-bootstrap';
-import EditUserForm from './EditUserForm';
+import EditContactForm from './EditContactForm';
 
 const User = (props) => {
     const [show, setShow] = useState(false);
@@ -15,10 +15,10 @@ const User = (props) => {
         <>
             <Modal animation={false} centered show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Edit User</Modal.Title>
+                    <Modal.Title>Edit Contact</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <EditUserForm userInfo={props.userInfo} 
+                    <EditContactForm userInfo={props.userInfo} 
                     editUser={props.editUser} 
                     closeModal={handleClose}/>
                 </Modal.Body>
@@ -29,12 +29,14 @@ const User = (props) => {
                 <Card>
                     <Card.Body>
                         <Card.Subtitle className="mb-2 text-muted">
-                            Codetrain User
+                            Contact
                     </Card.Subtitle>
                         <Card.Title>{props.userInfo.name}</Card.Title>
                         <Card.Text>
                             <p>Email: {props.userInfo.email}</p>
-                            <p>Gen: {props.userInfo.gen}</p>
+                            <p>Address: {props.userInfo.address}</p>
+                            <p>Phone number: {props.userInfo.phone_number}</p>
+                            <p>Type: {props.userInfo.type}</p>
                         </Card.Text>
                         <Card.Link href="#" onClick={handleShow}><Button size="sm">Edit</Button></Card.Link>
                         <Card.Link href="#">

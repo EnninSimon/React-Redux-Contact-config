@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-class EditUserForm extends Component {
+class EditContactForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
             name: props.userInfo.name,
             email: props.userInfo.email,
-            gen: props.userInfo.gen,
-            id: props.userInfo.id
+            address: props.userInfo.address,
+            phone_number: props.userInfo.phone_number,
+            type: props.userInfo.type,
+            id: props.userInfo.id,
         }
     }
 
@@ -25,7 +27,9 @@ class EditUserForm extends Component {
         this.setState({
             name: "",
             email: "",
-            gen: ""
+            address:"",
+            phone_number:"",
+            type: ""
         })
         this.props.closeModal();
     }
@@ -35,21 +39,33 @@ class EditUserForm extends Component {
             <Form onSubmit={this.handleSubmit}>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
-                    <Form.Control type="text" placeholder="Enter name"
+                    <Form.Control type="text" placeholder="Re-enter name"
                         name="name" onChange={this.handleChange}
                         value={this.state.name} />
                 </Form.Group>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email </Form.Label>
-                    <Form.Control type="email" placeholder="Enter email"
+                    <Form.Control type="email" placeholder="Re-enter email"
                         name="email" onChange={this.handleChange}
                         value={this.state.email} />
                 </Form.Group>
                 <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Gen</Form.Label>
-                    <Form.Control type="number" placeholder="Enter Gen"
-                        name="gen" onChange={this.handleChange}
-                        value={this.state.gen} />
+                    <Form.Label>Address</Form.Label>
+                    <Form.Control type="text" placeholder="Re-enter address"
+                        name="address" onChange={this.handleChange}
+                        value={this.state.address} />
+                </Form.Group>
+                <Form.Group controlId="formBasicPassword">
+                    <Form.Label>Phone number</Form.Label>
+                    <Form.Control type="number" placeholder="Re-enter number"
+                        name="phone_number" onChange={this.handleChange}
+                        value={this.state.phone_number} />
+                </Form.Group>
+                <Form.Group controlId="formBasicPassword">
+                    <Form.Label>Type</Form.Label>
+                    <Form.Control type="text" placeholder="Re-enter relationship"
+                        name="type" onChange={this.handleChange}
+                        value={this.state.type} />
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Submit
@@ -59,4 +75,4 @@ class EditUserForm extends Component {
     }
 }
 
-export default EditUserForm;
+export default EditContactForm;

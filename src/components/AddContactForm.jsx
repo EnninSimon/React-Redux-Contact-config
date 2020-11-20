@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-class AddUserForm extends Component {
+class AddContactForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
             name: "",
             email: "",
-            gen: ""
+            address:"",
+            phone_number:"",
+            type: ""
         }
     }
 
@@ -24,7 +26,9 @@ class AddUserForm extends Component {
         this.setState({
             name: "",
             email: "",
-            gen: ""
+            address:"",
+            phone_number:"",
+            type: ""
         })
     }
 
@@ -33,21 +37,33 @@ class AddUserForm extends Component {
             <Form onSubmit={this.handleSubmit}>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
-                    <Form.Control type="text" placeholder="Enter name"
+                    <Form.Control type="text" placeholder="Your name"
                         name="name" onChange={this.handleChange}
                         value={this.state.name} />
                 </Form.Group>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email </Form.Label>
-                    <Form.Control type="email" placeholder="Enter email"
+                    <Form.Control type="email" placeholder="Your email"
                         name="email" onChange={this.handleChange}
                         value={this.state.email} />
                 </Form.Group>
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label>Address</Form.Label>
+                    <Form.Control type="text" placeholder="Your address"
+                        name="address" onChange={this.handleChange}
+                        value={this.state.address} />
+                </Form.Group>
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label>Phone number</Form.Label>
+                    <Form.Control type="number" placeholder="Your number"
+                        name="phone_number" onChange={this.handleChange}
+                        value={this.state.phone_number} />
+                </Form.Group>
                 <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Gen</Form.Label>
-                    <Form.Control type="number" placeholder="Enter Gen"
-                        name="gen" onChange={this.handleChange}
-                        value={this.state.gen} />
+                    <Form.Label>Type</Form.Label>
+                    <Form.Control type="text" placeholder="Relationship"
+                        name="type" onChange={this.handleChange}
+                        value={this.state.type} />
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Add
@@ -57,4 +73,4 @@ class AddUserForm extends Component {
     }
 }
 
-export default AddUserForm;
+export default AddContactForm;

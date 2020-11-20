@@ -1,6 +1,6 @@
 import {createStore} from 'redux';
-import usersReducer from '../reducers/usersReducer';
+import contactsReducer from '../reducers/contactsReducer';
 
 
-export const store = createStore(usersReducer);
+export const store = createStore(contactsReducer);
 
